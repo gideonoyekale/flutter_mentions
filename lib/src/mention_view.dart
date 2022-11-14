@@ -39,6 +39,7 @@ class FlutterMentions extends StatefulWidget {
     this.cursorWidth = 2.0,
     this.cursorRadius,
     this.cursorColor,
+    this.inputFormatters,
     this.keyboardAppearance,
     this.scrollPadding = const EdgeInsets.all(20.0),
     this.enableInteractiveSelection = true,
@@ -171,6 +172,9 @@ class FlutterMentions extends StatefulWidget {
   /// enforce the limit, or merely provide a character counter and warning when
   /// [maxLength] is exceeded.
   final MaxLengthEnforcement maxLengthEnforcement;
+
+  /// {@macro flutter.widgets.editableText.inputFormatters}
+  final List<TextInputFormatter>? inputFormatters;
 
   /// {@macro flutter.widgets.editableText.onChanged}
   final ValueChanged<String>? onChanged;
@@ -478,6 +482,7 @@ class FlutterMentionsState extends State<FlutterMentions> {
                 enableInteractiveSelection: widget.enableInteractiveSelection,
                 enableSuggestions: widget.enableSuggestions,
                 scrollController: widget.scrollController,
+                inputFormatters: widget.inputFormatters,
                 scrollPadding: widget.scrollPadding,
                 scrollPhysics: widget.scrollPhysics,
                 controller: controller,
